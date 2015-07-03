@@ -221,7 +221,7 @@ public class FlowImageLayout extends ViewGroup {
         setOnImageLayoutFinishListener(finishListener);
         setImagesNum(imageNum);
         setImageView();
-//        requestLayout();
+        requestLayout();
     }
 
     /**
