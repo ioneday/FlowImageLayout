@@ -3,7 +3,8 @@ FlowImageLayout
 
 当前主流社交软件（微信，QQ，美丽说）图片展示方式
 
-![](https://github.com/ioneday/FlowImageLayout/blob/master/screenshot/flowimagelayout.png?raw=true) ![](https://github.com/ioneday/FlowImageLayout/blob/master/screenshot/flowimagelayout.gif?raw=true)
+![](https://github.com/ioneday/FlowImageLayout/blob/master/screenshot/flowimagelayouts.png?raw=true)
+![](https://github.com/ioneday/FlowImageLayout/blob/master/screenshot/flowimagelayout.gif?raw=true)
 
 Usage
 ===
