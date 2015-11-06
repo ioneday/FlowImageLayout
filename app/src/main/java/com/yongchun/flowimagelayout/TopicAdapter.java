@@ -53,7 +53,7 @@ public class TopicAdapter extends BaseAdapter{
         holder.topic_content.setText(topic.getTopicContent());
         holder.image_layout.setHorizontalSpacing(2);
         holder.image_layout.setVerticalSpacing(2);
-        holder.image_layout.setOneImageWidthHeight(800,640);
+        holder.image_layout.setOneImageWidthHeight(640,400);
         holder.image_layout.setLoadImage(topic.getImgaes().size(), new FlowImageLayout.OnImageLayoutFinishListener() {
             @Override
             public void layoutFinish(List<ImageView> images) {
