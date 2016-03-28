@@ -13,13 +13,14 @@ import java.util.List;
 /**
  * Created by dee on 15/6/29.
  */
-public class TopicAdapter extends BaseAdapter{
+public class TopicAdapter extends BaseAdapter {
     private List<Topic> list = new ArrayList<Topic>();
 
-    public void addTopic(Topic topic){
+    public void addTopic(Topic topic) {
         list.add(topic);
         notifyDataSetChanged();
     }
+
     @Override
     public int getCount() {
         return list.size();
@@ -37,8 +38,8 @@ public class TopicAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_topic,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_topic, parent, false);
             ViewHolder holder = new ViewHolder();
             holder.user_image = (ImageView) convertView.findViewById(R.id.user_image);
             holder.user_name = (TextView) convertView.findViewById(R.id.user_name);
@@ -53,7 +54,7 @@ public class TopicAdapter extends BaseAdapter{
         holder.topic_content.setText(topic.getTopicContent());
         holder.image_layout.setHorizontalSpacing(2);
         holder.image_layout.setVerticalSpacing(2);
-        holder.image_layout.setOneImageWidthHeight(640,400);
+        holder.image_layout.setOneImageWidthHeight(640, 400);
         holder.image_layout.setLoadImage(topic.getImgaes().size(), new FlowImageLayout.OnImageLayoutFinishListener() {
             @Override
             public void layoutFinish(List<ImageView> images) {
@@ -64,7 +65,8 @@ public class TopicAdapter extends BaseAdapter{
         });
         return convertView;
     }
-    static class ViewHolder{
+
+    static class ViewHolder {
         ImageView user_image;
         TextView user_name;
         TextView topic_content;

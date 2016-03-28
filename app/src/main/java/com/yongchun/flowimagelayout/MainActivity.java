@@ -1,18 +1,19 @@
 package com.yongchun.flowimagelayout;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     private ListView imageListView;
     private TopicAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,30 +21,22 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
     }
-    public void initView(){
-        imageListView = (ListView)findViewById(R.id.image_list);
+
+    public void initView() {
+        imageListView = (ListView) findViewById(R.id.image_list);
         adapter = new TopicAdapter();
         imageListView.setAdapter(adapter);
 
-        adapter.addTopic(new Topic(R.mipmap.image_user, "Nemo", "The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4,R.mipmap.image5})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4,R.mipmap.image5,R.mipmap.image6})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4,R.mipmap.image5,R.mipmap.image6,R.mipmap.image8})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4,R.mipmap.image5,R.mipmap.image6,R.mipmap.image8,R.mipmap.image9})));
-        adapter.addTopic(new Topic(R.mipmap.image_user,"Nemo","The Android Clock App Clinic",
-                Arrays.asList(new Integer[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3,R.mipmap.image4,R.mipmap.image5,R.mipmap.image6,R.mipmap.image8,R.mipmap.image9,R.mipmap.image2})));
+
+        for (int i = 0; i < 9; i++) {
+            List<Integer> imageId = new ArrayList<>();
+            for (int k = 1; k < i + 2; k++) {
+                imageId.add(getResources().getIdentifier("image"+k,"mipmap",getPackageName()));
+            }
+            adapter.addTopic(new Topic(R.mipmap.image_user, "Nemo", "Don't put off today's work till tomorrow. ",imageId));
+        }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
