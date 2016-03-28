@@ -10,14 +10,14 @@ FlowImageLayout
 
 Usage
 ===
-1.
+Step.1 Copy code to your layout.xml
 ``` xml
 <com.yongchun.flowimagelayout.FlowImageLayout
         android:id="@+id/image_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 ```
-2.
+Step.2 initView、setSingleImageSize、loadImage
 ``` java
 FlowImageLayout image_layout = (FlowImageLayout) findViewById(R.id.image_layout);
 image_layout.setSingleImageSize(800,640);
@@ -33,7 +33,7 @@ image_layout.loadImage(9, new FlowImageLayout.OnImageLayoutFinishListener() {
 
 License
 ===
-Copyright 2015 iOneDay
+Copyright 2015 Dee
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
