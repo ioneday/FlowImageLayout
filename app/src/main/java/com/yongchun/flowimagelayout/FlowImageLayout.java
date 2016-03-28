@@ -26,8 +26,8 @@ public class FlowImageLayout extends ViewGroup {
     private int imageWidth = 0;
     private int imageHeight = 0;
 
-    private int oneImageWidth = 0;
-    private int oneImageHeight = 0;
+    private int singleImageWidth = 0;
+    private int singleImageHeight = 0;
 
     private OnImageLayoutFinishListener finishListener;
 
@@ -95,8 +95,8 @@ public class FlowImageLayout extends ViewGroup {
      */
     private void calculateImageSize() {
         if (imageNum == 1) {
-            parentLayoutWidth = imageWidth = oneImageWidth;
-            parentLayoutHeight = imageHeight = oneImageHeight;
+            parentLayoutWidth = imageWidth = singleImageWidth;
+            parentLayoutHeight = imageHeight = singleImageHeight;
         } else {
             // 左右间距总和
             int horizontalSpacingCount = (COLUMN_NUM - 1) * dip2px(horizontalSpacing);
@@ -112,7 +112,7 @@ public class FlowImageLayout extends ViewGroup {
         return imageNum % COLUMN_NUM == 0 ? rowNum : rowNum + 1;
     }
 
-    public void setLoadImage(int imageNum, OnImageLayoutFinishListener finishListener) {
+    public void loadImage(int imageNum, OnImageLayoutFinishListener finishListener) {
         setOnImageLayoutFinishListener(finishListener);
         this.imageNum = imageNum;
         rowNum = getRowNums();
@@ -146,9 +146,9 @@ public class FlowImageLayout extends ViewGroup {
      * @param width
      * @param height
      */
-    public void setOneImageWidthHeight(int width, int height) {
-        this.oneImageWidth = width;
-        this.oneImageHeight = height;
+    public void setSingleImageSize(int width, int height) {
+        this.singleImageWidth = width;
+        this.singleImageHeight = height;
     }
 
     /**

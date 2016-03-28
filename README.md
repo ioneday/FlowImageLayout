@@ -20,17 +20,15 @@ Usage
 2.
 ``` java
 FlowImageLayout image_layout = (FlowImageLayout) findViewById(R.id.image_layout);
-image_layout.setHorizontalSpacing(2);
-image_layout.setVerticalSpacing(2);
-image_layout.setOneImageWidthHeight(800,640);
-image_layout.setLoadImage(9, new FlowImageLayout.OnImageLayoutFinishListener() {
-            @Override
-            public void layoutFinish(List<ImageView> images) {
-//                for (int i = 0; i < images.size(); i++) {
-//                    images.get(i).setImageResource(topic.getImgaes().get(i));
-//                }
-            }
-        });
+image_layout.setSingleImageSize(800,640);
+image_layout.loadImage(9, new FlowImageLayout.OnImageLayoutFinishListener() {
+        @Override
+        public void layoutFinish(List<ImageView> images) {
+//            for (int i = 0; i < images.size(); i++) {
+//                images.get(i).setImageResource();
+//            }
+        }
+});
 ```
 
 License

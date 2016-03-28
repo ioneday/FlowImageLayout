@@ -52,10 +52,12 @@ public class TopicAdapter extends BaseAdapter {
         holder.user_image.setImageResource(topic.getUserImageResId());
         holder.user_name.setText(topic.getUserName());
         holder.topic_content.setText(topic.getTopicContent());
+
+
         holder.image_layout.setHorizontalSpacing(2);
         holder.image_layout.setVerticalSpacing(2);
-        holder.image_layout.setOneImageWidthHeight(640, 400);
-        holder.image_layout.setLoadImage(topic.getImgaes().size(), new FlowImageLayout.OnImageLayoutFinishListener() {
+        holder.image_layout.setSingleImageSize(640, 400);
+        holder.image_layout.loadImage(topic.getImgaes().size(), new FlowImageLayout.OnImageLayoutFinishListener() {
             @Override
             public void layoutFinish(List<ImageView> images) {
                 for (int i = 0; i < images.size(); i++) {
